@@ -100,6 +100,11 @@ def compute_gradient(X, y, theta_1, theta_2, theta_3):
     Delta_1 = np.dot(delta_1.T, X)
     Delta_2 = np.dot(delta_2.T, np.c_[np.ones(np.shape(a_1)[0],), a_1])
     Delta_3 = np.dot(delta_3.T, np.c_[np.ones(np.shape(a_2)[0],), a_2])
+    '''
+    possible considerations
+    Delta_2 = np.dot(delta_2.T, z_1)
+    Delta_3 = np.dot(delta_3.T, z_2)
+    '''
 
     theta_1_grad = Delta_1/m + (lambda_/m) * l_theta_1
     theta_2_grad = Delta_2/m + (lambda_/m) * l_theta_2
